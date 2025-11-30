@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Margaret & Zakaria</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --light-gold: #f4e8c1;
+            --dark-gold: #b8941f;
+            --cream: #fefbf6;
+            --dark-text: #333333;
+            --charcoal: #2c2c2c;
+        }
+        
+        body {
+            background-color: var(--cream);
+            color: var(--dark-text);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .gold-text {
+            color: var(--gold);
+        }
+        
+        .gold-bg {
+            background-color: var(--gold);
+        }
+        
+        .section-divider {
+            border-top: 1px solid var(--light-gold);
+            margin: 3rem 0;
+        }
+        
+        /* Header Styles with Background Image */
+        .wedding-header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('IMG_1435.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 10rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .couple-names {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+        
+        .wedding-date {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+        }
+        
+        .header-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+        
+        /* Card Styles */
+        .program-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header-custom {
+            background: linear-gradient(135deg, var(--charcoal), var(--dark-gold));
+            color: white;
+            border-radius: 0 !important;
+            padding: 1.2rem 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        
+        .compact-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+        
+        .timeline-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-section h5 {
+            color: var(--gold);
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-item-compact {
+            display: flex;
+            margin-bottom: 0.8rem;
+            align-items: flex-start;
+        }
+        
+        .time-badge-compact {
+            background-color: var(--light-gold);
+            color: var(--dark-gold);
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 75px;
+            text-align: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content {
+            flex-grow: 1;
+        }
+        
+        .timeline-content h6 {
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer Styles */
+        .wedding-footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Thank You Section */
+        .thank-you-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: white;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .thank-you-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite both;
+        }
+        
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+                transform-origin: center center;
+                animation-timing-function: ease-out;
+            }
+            10% {
+                transform: scale(0.91);
+                animation-timing-function: ease-in;
+            }
+            17% {
+                transform: scale(0.98);
+                animation-timing-function: ease-out;
+            }
+            33% {
+                transform: scale(0.87);
+                animation-timing-function: ease-in;
+            }
+            45% {
+                transform: scale(1);
+                animation-timing-function: ease-out;
+            }
+        }
+        
+        /* Photo Gallery Card */
+        .gallery-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-image {
+            height: 200px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('IMG_1435.JPG');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .gallery-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .gallery-btn {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            border: none;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .gallery-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        /* Bible Verse Section */
+        .bible-verse-section {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-gold) 0%, #f8f4e9 100%);
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .bible-icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .bible-verse {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+        
+        .verse-reference {
+            font-weight: 600;
+            color: var(--dark-gold);
+            font-size: 1rem;
+        }
+        
+        /* Memory Section */
+        .memory-section {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .memory-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--dark-text);
+            line-height: 1.8;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 3rem;
+            }
+            
+            .wedding-date {
+                font-size: 1.5rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .wedding-header {
+                padding: 6rem 0;
+                min-height: 70vh;
+                background-attachment: scroll;
+            }
+            
+            .compact-timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .bible-verse {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Background Image -->
+    <header class="wedding-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="couple-names">Margaret & Zakaria</h1>
+                <p class="wedding-date">28th November, 2025</p>
+                <p class="header-subtitle">Thank You For Celebrating With Us</p>
+                <div class="floral-divider">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Thank You Message -->
+        <div class="thank-you-section">
+            <div class="thank-you-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2 class="gold-text">With Grateful Hearts</h2>
+            <p class="lead mb-4">We want to express our deepest gratitude to everyone who shared in our special day</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="memory-text">
+                        "Our wedding day was everything we dreamed of and more, thanks to your love, support, and presence. 
+                        Each smile, hug, and word of encouragement made our celebration truly magical. 
+                        We are blessed to have such wonderful family and friends in our lives."
+                    </p>
+                    <p class="mt-4"><strong>With all our love,</strong></p>
+                    <h4 class="gold-text">Margaret & Zakaria</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bible Verse Section -->
+        <div class="bible-verse-section">
+            <div class="bible-icon">
+                <i class="fas fa-bible"></i>
+            </div>
+            <p class="bible-verse">
+                "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. 
+                It does not dishonor others, it is not self-seeking, it is not easily angered, 
+                it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. 
+                It always protects, always trusts, always hopes, always perseveres. Love never fails."
+            </p>
+            <p class="verse-reference">1 Corinthians 13:4-8</p>
+        </div>
+
+        <!-- Photo Gallery Card -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+                <div class="gallery-card text-center">
+                    <div class="gallery-image">
+                        <div>
+                            <div class="gallery-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h3 class="text-white">Our Wedding Gallery</h3>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="gold-text mb-3">Relive the Magic</h4>
+                        <p class="mb-4">Browse through our beautiful wedding photos and download your favorites</p>
+                        <a href="https://files.fm/u/kq2jgrzunf" target="_blank" class="gallery-btn">
+                            <i class="fas fa-external-link-alt me-2"></i>View Photo Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compact Wedding Programme -->
+        <div class="program-card">
+            <div class="card-header card-header-custom">
+                <i class="fas fa-calendar-alt me-2"></i> OUR WEDDING DAY
+            </div>
+            <div class="compact-timeline">
+                <div class="timeline-section">
+                    <h5>Morning</h5>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">9:00 AM</span>
+                        <div class="timeline-content">
+                            <h6>Breakfast</h6>
+                            <p>At Pst. Zakaria's Home</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">9:30 AM</span>
+                        <div class="timeline-content">
+                            <h6>Journey</h6>
+                            <p>To Bride's Home</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:00 AM</span>
+                        <div class="timeline-content">
+                            <h6>Arrival</h6>
+                            <p>At Itacho PEFA Church</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h5>Ceremony</h5>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:00 AM</span>
+                        <div class="timeline-content">
+                            <h6>Processional</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:10 AM</span>
+                        <div class="timeline-content">
+                            <h6>Bridal Party</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:20 AM</span>
+                        <div class="timeline-content">
+                            <h6>Bride's Entrance</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:40 AM</span>
+                        <div class="timeline-content">
+                            <h6>Opening Prayer</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">11:55 AM</span>
+                        <div class="timeline-content">
+                            <h6>Choir</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h5>Marriage Rite</h5>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">12:10 PM</span>
+                        <div class="timeline-content">
+                            <h6>Bible Readings</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">12:40 PM</span>
+                        <div class="timeline-content">
+                            <h6>Marriage Vows</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">1:00 PM</span>
+                        <div class="timeline-content">
+                            <h6>Exchange of Rings</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">1:10 PM</span>
+                        <div class="timeline-content">
+                            <h6>Signing Certificate</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h5>Celebrations</h5>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">1:25 PM</span>
+                        <div class="timeline-content">
+                            <h6>Declaration</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">1:40 PM</span>
+                        <div class="timeline-content">
+                            <h6>Presentation</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">1:50 PM</span>
+                        <div class="timeline-content">
+                            <h6>Cake Cutting</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">2:00 PM</span>
+                        <div class="timeline-content">
+                            <h6>Prayer & Blessings</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">2:20 PM</span>
+                        <div class="timeline-content">
+                            <h6>Special Presentations</h6>
+                        </div>
+                    </div>
+                    <div class="timeline-item-compact">
+                        <span class="time-badge-compact">2:40 PM</span>
+                        <div class="timeline-content">
+                            <h6>Lunch Served</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Section -->
+        <div class="memory-section">
+            <h3 class="gold-text mb-4">A Day to Remember</h3>
+            <p class="memory-text">
+                "The best thing to hold onto in life is each other." - Audrey Hepburn
+            </p>
+            <p class="memory-text mt-3">
+                We will forever cherish the memories created on this beautiful day, surrounded by our loved ones.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="wedding-footer">
+        <div class="container text-center">
+            <h3 class="mb-3">Margaret & Zakaria</h3>
+            <p class="footer-text">Thank you for being part of our journey</p>
+            <p class="footer-text">28th November, 2025 • Itacho PEFA Church</p>
+            <div class="mt-4">
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
